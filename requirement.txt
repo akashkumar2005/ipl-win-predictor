@@ -1,4 +1,6 @@
+cat << 'EOF' > requirements.txt
 streamlit
 pandas
-numpy
-sklearn
+scikit-learn==1.3.2
+joblib
+EOF
