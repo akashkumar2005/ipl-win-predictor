@@ -1,7 +1,15 @@
-import streamlit as st
-import pickle
-import pandas as pd
 import joblib
+import pandas as pd
+import sklearn.compose._column_transformer
+import streamlit as st
+
+# Compatibility patch for _RemainderColsList
+if not hasattr(sklearn.compose._column_transformer, '_RemainderColsList'):
+
+  class _RemainderColsList(list):
+    pass
+
+  sklearn.compose._column_transformer._RemainderColsList = _RemainderColsList
 
 
 
